@@ -1,0 +1,11 @@
+Indextank demo application.
+
+This is an extension of the Django's tutorial. Here we show some features of indextank.
+
+To run:
+
+* Fork or download the project
+* python manage.py syncdb
+* python manage.py runserver
+* Play with it
+
