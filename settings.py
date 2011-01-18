@@ -1,4 +1,4 @@
-# Django settings for indextank-py-demo project.
+# Django settings for django-indextank-py-demo project.
 import os
 
 # DO NOT USE this account in a production environment because some people may be using it as well.
@@ -67,7 +67,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'indextank-py-demo.urls'
+ROOT_URLCONF = 'django-indextank-py-demo.urls'
 
 # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
 # Always use forward slashes, even on Windows.
