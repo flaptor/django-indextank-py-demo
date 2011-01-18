@@ -1,4 +1,4 @@
-Indextank demo application.
+Indextank demo application. (http://www.indextank.com)
 
 This is an extension of the Django's tutorial. Here we show some features of indextank.
 
@@ -10,3 +10,7 @@ To run:
 * python manage.py runserver
 * Go http://localhost:8000/ and play with it
 
+
+settings.py contains API_URL and INDEX_NAME configurations. those belongs to a free Indextank account and some people might be using it at the same time. If you don't like to share your index while you're playing, please go to http://www.indextank.com, sign up for free and replace API_URL and INDEX_NAME variables in settings.py
+
+If you have some questions, please let us know at support@indextank.com
