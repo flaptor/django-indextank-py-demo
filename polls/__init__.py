@@ -24,31 +24,31 @@ def create_some_polls():
     p2.save()
     
     p3 = Poll()
-    p3.question = 'Which editor do you use to create your website?'
+    p3.question = 'How much leg thrust does Superman need to leap over a tall building with a single bound?'
     p3.pub_date = datetime.datetime.now()
     p3.save()
     
-    p3.choice_set.create(choice='Dreamweaver', votes=9)
-    p3.choice_set.create(choice='Frontpage', votes=2)
-    p3.choice_set.create(choice='GoLive', votes=5)
+    p3.choice_set.create(choice='4,000lbs', votes=9)
+    p3.choice_set.create(choice='6,000lbs', votes=2)
+    p3.choice_set.create(choice='8,000lbs', votes=5)
     p3.save()
     
     p4 = Poll()
-    p4.question = 'Do you have a flash enabled browser?'
+    p4.question = 'Who is the most realistic superhero?'
     p4.pub_date = datetime.datetime.now()
     p4.save()
     
-    p4.choice_set.create(choice='Yes', votes=9)
-    p4.choice_set.create(choice='No', votes=2)
-    p4.choice_set.create(choice='Don\'t know', votes=5)
+    p4.choice_set.create(choice='Batman', votes=9)
+    p4.choice_set.create(choice='Green Arrow', votes=2)
+    p4.choice_set.create(choice='Kick-Ass', votes=5)
     p4.save()
 
-    p4 = Poll()
-    p4.question = 'Do you have a flash enabled browser?'
-    p4.pub_date = datetime.datetime.now()
-    p4.save()
+    p5 = Poll()
+    p5.question = 'Who is the fastest superhero?'
+    p5.pub_date = datetime.datetime.now()
+    p5.save()
     
-    p4.choice_set.create(choice='Yes', votes=9)
-    p4.choice_set.create(choice='No', votes=2)
-    p4.choice_set.create(choice='Don\'t know', votes=5)
-    p4.save()
+    p5.choice_set.create(choice='Superman', votes=2)
+    p5.choice_set.create(choice='Flash', votes=2)
+    p5.choice_set.create(choice='Robin', votes=9)
+    p5.save()

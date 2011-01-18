@@ -6,6 +6,7 @@ To run:
 
 * Fork or download the project
 * python manage.py syncdb
+* Add some polls to your database
 * python manage.py runserver
-* Play with it
+* Go http://localhost:8000/ and play with it
 

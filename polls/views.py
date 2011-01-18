@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from polls.models import Choice, Poll
+from polls import create_some_polls
 
 from indextank_client import ApiClient
 
@@ -36,3 +37,7 @@ def search(request):
     object_list = Poll.objects.filter(pk__in=result_ids)
     
     return render_to_response('polls/poll_list.html', {'query': query, 'object_list': object_list})
+        
+def create_polls(request):
+    create_some_polls()
+    return HttpResponse('Polls created')
