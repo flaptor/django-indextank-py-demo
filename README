@@ -1,6 +1,11 @@
-Indextank demo application. (http://www.indextank.com)
+IndexTank Demo Application for Django and Python
+================================================
+[http://www.indextank.com]
 
-This is an extension of the Django's tutorial. Here we show some features of indextank.
+[http://indextank.com/documentation/python-client]
+(See the updated documentation on this client)
+
+This is an extension of the Django's tutorial. Here we show some Indextank's features
 
 To run:
 

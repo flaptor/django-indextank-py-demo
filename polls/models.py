@@ -17,7 +17,9 @@ class Poll(models.Model):
     
     def save(self):
         super(Poll, self).save()
-        _index.add_document(self.id, {'text': self.question})
+        text = self.question + ' ' + ' '.join([c.choice for c in p1.choice_set])
+        
+        _index.add_document(self.id, {'text': text})
 
     def delete(self):
         _index.delete_document(self.id)
@@ -33,5 +35,4 @@ class Choice(models.Model):
     
     def __unicode__(self):
         return self.choice
-    
 
