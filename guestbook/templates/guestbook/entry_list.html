@@ -1,4 +1,20 @@
 <html>
+<head>
+  <script src='http://www.google.com/jsapi' type='text/javascript'></script> 
+  <script type='text/javascript'> 
+  google.load("jquery", "1.4.4");
+  google.load("jqueryui", "1.8.7");
+  </script>
+  <style>
+  /* some style rules to make autocomplete clearer */
+  .ui-autocomplete {
+    width:200px;
+    background-color:#FFFFFF;
+    border-style:solid;
+    border-width:2px;
+  }
+  </style>
+</head>
 <body>
 	<form action="/guestbook/search" method="get">
 		{% if query %}
@@ -24,5 +40,40 @@
 		<label>Comment:</label> <textarea name="text" cols=40 rows=4>Enter you comment</textarea> <br>
 		<input type="submit" id="submit" value="Submit">
 	</form>
+	
+  <script type='text/javascript'>
+    // autocomplete. view the updated documentation at http://www.indextank.com/documentation/tutorial-autocomplete
+    var publicApiUrl = "http://8vfp1.api.indextank.com";
+    var indexName = "guestbook";
+    var elementId = "#query";
+    var remoteSource = publicApiUrl + "/v1/indexes/" + indexName + "/autocomplete";
+
+    google.setOnLoadCallback(function() {
+    $(function() {
+
+    var sourceCallback = function( request, responseCallback ) {
+      $.ajax( {
+        url: remoteSource,
+        dataType: "jsonp",
+        data: { query: request.term },
+        success: function( data ) { responseCallback( data.suggestions ); }
+      } );
+    };
+
+    var selectCallback = function( event, ui ) { 
+      event.target.value = ui.item.value;
+      event.target.form.submit();
+    };
+
+    $( elementId ).autocomplete( {
+      source: sourceCallback,
+      minLength: 2,
+      delay: 100,
+      select: selectCallback
+    } );
+
+    }); // $ fun
+    }); // g callback
+	</script>
 </body>
 </html>

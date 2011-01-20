@@ -25,11 +25,14 @@ def detail(request, object_id):
     entry_object.views += 1
     entry_object.save()
 
+    # create api client and get index
     api = ApiClient(API_URL)
     index = api.get_index(INDEX_NAME)
     
+    # variables are accessed by numbers. in this case 'd[0]' in a scoring function will reference 'entry_object.views'
     variables = {0:entry_object.views}
     
+    # update the variables of this document
     index.update_variables(entry_object.id, variables)
     
     
@@ -37,10 +40,13 @@ def detail(request, object_id):
         
 def search(request):
     query = request.GET['query']
+    # create api client and get index
     api = ApiClient(API_URL)
     index = api.get_index(INDEX_NAME)
+    # search by query and sort by views
     search_result = index.search(query, scoring_function=1)
     
+    # retrieve results from database
     result_ids = [int(r['docid']) for r in search_result['results']]
     
     entry_list = []
