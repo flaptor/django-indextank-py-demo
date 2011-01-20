@@ -1,10 +1,6 @@
 # Django settings for django-indextank-py-demo project.
 import os
 
-# DO NOT USE this account in a production environment because some people may be using it as well.
-API_URL='http://:mmIHCmJbxSlHZI@8vfp1.api.indextank.com'
-INDEX_NAME='polls'
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -14,7 +10,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'polldemo.db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = 'guestbook.db'             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -72,13 +68,9 @@ ROOT_URLCONF = 'django-indextank-py-demo.urls'
 # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
 # Always use forward slashes, even on Windows.
 # Don't forget to use absolute paths, not relative paths.
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'views'),)
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'views'),
+                os.path.join(os.path.dirname(__file__), 'guestbook/templates'),)
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.admin',
-    'polls'
+    'guestbook'
 )

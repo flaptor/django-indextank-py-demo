@@ -1,0 +1,28 @@
+<html>
+<body>
+	<form action="/guestbook/search" method="get">
+		{% if query %}
+		<input type="text" id="query" name="query" value="{{query}}">
+		{% else %}
+		<input type="text" id="query" name="query" value="search your entries">
+		{% endif %}
+		<input type="submit" id="search" value="search">
+	</form>
+{% if entry_list %}
+    <dl>
+    {% for entry in entry_list %}
+        <dt><a href="/guestbook/{{ entry.id }}/">{{ entry.name }}</a> ({{entry.views}})</dt>
+        <dd>{{entry.text}}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No entries are available.</p>
+{% endif %}
+	<form action="/guestbook/submit" method="post">
+		<label>Name:</label> <input type="text" id="name" name="name" value="anonymous"> <br>
+		<label>Email:</label> <input type="text" id="email" name="email" value="a@asd.com"> <br>
+		<label>Comment:</label> <textarea name="text" cols=40 rows=4>Enter you comment</textarea> <br>
+		<input type="submit" id="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -5,17 +5,16 @@ IndexTank Demo Application for Django and Python
 [http://indextank.com/documentation/python-client]
 (See the updated documentation on this client)
 
-This is an extension of the Django's tutorial. Here we show some Indextank's features
+This is a simple django guestbook application with searching features using Indextank engine
 
 To run:
 
 * Fork or download the project
 * python manage.py syncdb
-* Add some polls to your database
 * python manage.py runserver
 * Go http://localhost:8000/ and play with it
 
 
-settings.py contains API_URL and INDEX_NAME configurations. those belongs to a free Indextank account and some people might be using it at the same time. If you don't like to share your index while you're playing, please go to http://www.indextank.com, sign up for free and replace API_URL and INDEX_NAME variables in settings.py
+guestbook/views.py and guestbook/__init__.py contains API_URL and INDEX_NAME configurations. those belongs to a free Indextank account and some people might be using it at the same time. If you don't like to share your index while you're playing, please go to http://www.indextank.com, sign up for free and replace API_URL and INDEX_NAME variables in those files
 
 If you have some questions, please let us know at support@indextank.com

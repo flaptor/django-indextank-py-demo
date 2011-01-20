@@ -1,0 +1,12 @@
+<html>
+<body>
+	<form action="/guestbook/search" method="get">
+		<input type="text" id="query" name="query" value="search your entries">
+		<input type="submit" id="search" value="search">
+	</form>
+  <h1>{{entry_object.name}} ({{entry_object.views}})</h1>
+  <h2>{{entry_object.email}}</h2>
+  <p>{{entry_object.text}}</p>
+  <a href="/guestbook">home</a>
+</body>
+</html>

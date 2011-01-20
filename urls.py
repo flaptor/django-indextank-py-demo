@@ -14,8 +14,7 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^$', 'django.views.static.serve', {'path': '/home.html',  'document_root': settings.TEMPLATE_DIRS[0]}),
-    (r'^polls/', include('polls.urls')),
-    (r'^admin/', include(admin.site.urls)),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
+    (r'^guestbook/', include('guestbook.urls')),
 )
  
